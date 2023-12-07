@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerRotation : MonoBehaviour {
 
+    private Vector3 lookDirection;
+
 
     private void Update() {
         Rotate();
@@ -11,9 +13,11 @@ public class PlayerRotation : MonoBehaviour {
 
     private void Rotate() {
         Vector3 mouseWorldPos = InputManager.Instance.GetMouseWorldPosition();
-        Vector3 lookDirection =  mouseWorldPos - transform.position;
-        
+        lookDirection =  mouseWorldPos - transform.position;
+
         Quaternion rotation = Quaternion.LookRotation(lookDirection);
+        rotation.x = 0f;
+        rotation.z = 0f;
 
         transform.rotation = rotation;
     }
