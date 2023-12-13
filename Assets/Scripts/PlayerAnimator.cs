@@ -9,19 +9,28 @@ public class PlayerAnimator : MonoBehaviour {
     private const string PLAYER_IS_WALKING_BACKWARDS = "IsWalkingBackwards";
     private const string PLAYER_IS_WALKING_LEFT = "IsWalkingLeft";
     private const string PLAYER_IS_WALKING_RIGHT = "IsWalkingRight";
+    private const string PLAYER_SHOOT_TRIGGER = "Shoot";
 
     private Animator animator;
     private PlayerMovement playerMovement;
+    private PlayerAttack playerAttack;
 
 
     private void Awake() {
         animator = GetComponentInChildren<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
+        playerAttack = GetComponent<PlayerAttack>();
     }
 
     private void Start() {
         playerMovement.OnPlayerMoving += HandlePlayerMoving;
         playerMovement.OnPlayerStoppedMoving += HandlePlayerStoppedMoving;
+        playerAttack.OnShoot += HandlePlayerShoot;
+    }
+
+    private void HandlePlayerShoot() {
+        animator.SetTrigger(PLAYER_SHOOT_TRIGGER);
+        SetAnimatorParametersToFalse();
     }
 
     private void HandlePlayerStoppedMoving() {

@@ -1,4 +1,5 @@
 using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ using UnityEngine;
 public class InputManager : MonoBehaviour {
 
     public static InputManager Instance { get; private set; }
+
+    public event Action OnShootPerformed;
 
     [SerializeField] private LayerMask ignoreMouseLayerMask;
 
@@ -22,6 +25,12 @@ public class InputManager : MonoBehaviour {
 
         playerControls = new PlayerControls();
         playerControls.Enable();
+
+        playerControls.Player.Shoot.performed += HandleShootActionPerformed;
+    }
+
+    private void HandleShootActionPerformed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
+        OnShootPerformed?.Invoke();
     }
 
     private void FixedUpdate() {
