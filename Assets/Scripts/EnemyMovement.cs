@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour {
 
     private const EnemyState thisState = EnemyState.Follow;
 
-    private bool thisStateEnabled;
+    private bool thisStateEnabled = false;
     private Enemy enemy;
     private NavMeshAgent agent;
 

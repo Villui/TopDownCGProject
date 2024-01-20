@@ -6,6 +6,8 @@ public class Player : MonoBehaviour {
 
     public static Player Instance;
 
+    [SerializeField] private Transform centerOfMass;
+
 
     private void Awake() {
         if (Instance != null) {
@@ -14,5 +16,9 @@ public class Player : MonoBehaviour {
         }
 
         Instance = this;
+    }
+
+    public Transform GetCenterOfMass() {
+        return centerOfMass; 
     }
 }

@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlayerShootAvatar
+  m_Mask: 00000000010000000100000000000000000000000000000001000000000000000100000000000000000000000000000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature.Main
+    m_Weight: 0
+  - m_Path: Armature.Main/Bone
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/Bone.001
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/Bone.001/Bone.002
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/Bone.001/Bone.002/Bone.003
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/Bone.001/Bone.002/Bone.003/Bone.004
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.005_end
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/Bone.001/Bone.002/upperarm_l
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/Bone.001/Bone.002/upperarm_l/lowerarm_l
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/Bone.001/Bone.002/upperarm_l/lowerarm_l/hand_l
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/Bone.001/Bone.002/upperarm_l/lowerarm_l/hand_l/hand_l_end
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/Bone.001/Bone.002/upperarm_r
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/Bone.001/Bone.002/upperarm_r/lowerarm_r
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/Bone.001/Bone.002/upperarm_r/lowerarm_r/hand_r
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/Bone.001/Bone.002/upperarm_r/lowerarm_r/hand_r/hand_r_end
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/upperleg_l
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/upperleg_l/lowerleg_l
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/upperleg_l/lowerleg_l/foot_l
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/upperleg_l/lowerleg_l/foot_l/foot_l_end
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/upperleg_r
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/upperleg_r/lowerleg_r
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/upperleg_r/lowerleg_r/foot_r
+    m_Weight: 1
+  - m_Path: Armature.Main/Bone/upperleg_r/lowerleg_r/foot_r/foot_r_end
+    m_Weight: 1
+  - m_Path: Armature.Main/pole_l
+    m_Weight: 1
+  - m_Path: Armature.Main/pole_l/pole_l_end
+    m_Weight: 1
+  - m_Path: Armature.Main/pole_r
+    m_Weight: 1
+  - m_Path: Armature.Main/pole_r/pole_r_end
+    m_Weight: 1
+  - m_Path: Armature.Main/target_l
+    m_Weight: 1
+  - m_Path: Armature.Main/target_l/target_l_end
+    m_Weight: 1
+  - m_Path: Armature.Main/target_r
+    m_Weight: 1
+  - m_Path: Armature.Main/target_r/target_r_end
+    m_Weight: 1
+  - m_Path: Body.001
+    m_Weight: 0
