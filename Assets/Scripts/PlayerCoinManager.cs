@@ -26,6 +26,11 @@ public class PlayerCoinManager : MonoBehaviour {
         OnCoinsAdded?.Invoke();
     }
 
+    public void RemoveCoins(int coinAmount) {
+        currentCoinAmount -= coinAmount;
+        OnCoinsAdded?.Invoke();
+    }
+
     public int GetCurrentCoinAmount() {
         return currentCoinAmount;
     }

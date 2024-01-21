@@ -115,6 +115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destructionEffect: {fileID: 8035838682708273054, guid: 5d6de22202a8d384b97bf50909d226f2,
     type: 3}
+  coinEffect: {fileID: 2258320544492302696, guid: 3359e3721c7135c48b8650b3aa733563,
+    type: 3}
 --- !u!54 &8244918089845344535
 Rigidbody:
   m_ObjectHideFlags: 0

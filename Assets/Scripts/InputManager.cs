@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour {
     public event Action OnShootPerformed;
     public event Action OnSlashPerformed;
     public event Action OnTargetSelectPerformed;
+    public event Action OnInteractPerformed;
 
     [SerializeField] private LayerMask ignoreMouseLayerMask;
 
@@ -31,6 +32,11 @@ public class InputManager : MonoBehaviour {
         playerControls.Player.Shoot.performed += HandleShootActionPerformed;
         playerControls.Player.Slash.performed += HandleSlashActionPerformed;
         playerControls.Player.TargetSelect.performed += HandleTargetSelectActionPerformed;
+        playerControls.Player.Interact.performed += HandleInteractActionPerformed;
+    }
+
+    private void HandleInteractActionPerformed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
+        OnInteractPerformed?.Invoke();
     }
 
     private void HandleTargetSelectActionPerformed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {

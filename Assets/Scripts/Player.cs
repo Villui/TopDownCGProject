@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
 
     public static Player Instance;
 
+    [SerializeField] private GameObject swordEffect;
     [SerializeField] private Transform centerOfMass;
 
 
@@ -20,5 +21,9 @@ public class Player : MonoBehaviour {
 
     public Transform GetCenterOfMass() {
         return centerOfMass; 
+    }
+
+    public void EquipEffectSword() {
+        swordEffect.SetActive(true);
     }
 }

@@ -37,11 +37,12 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     private void DisableState() {
-        agent.destination = Vector3.zero;
+        agent.isStopped = true;
         thisStateEnabled = false;
     }
 
     private void EnableState() {
+        agent.isStopped = false;
         thisStateEnabled = true;
     }
 }
