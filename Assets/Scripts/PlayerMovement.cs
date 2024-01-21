@@ -52,8 +52,8 @@ public class PlayerMovement : MonoBehaviour {
     private void Move() {
         Vector3 velocity = playerRb.velocity;
 
-        velocity.x = movementVectorNormalized.x * playerMoveSpeed * Time.deltaTime;
-        velocity.z = movementVectorNormalized.z * playerMoveSpeed * Time.deltaTime;
+        velocity.x = movementVectorNormalized.x * playerMoveSpeed * Time.fixedDeltaTime;
+        velocity.z = movementVectorNormalized.z * playerMoveSpeed * Time.fixedDeltaTime;
 
         playerRb.velocity = velocity;
     }
