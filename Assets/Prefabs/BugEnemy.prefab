@@ -78,6 +78,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8d5aa1b69249e49b5170aeb6c0c5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinDrop: {fileID: 2258320544492302696, guid: 3359e3721c7135c48b8650b3aa733563,
+    type: 3}
+  damageEffect: {fileID: 1376513623664829391, guid: fca9e97e288fbe84787d1b3120dcbae8,
+    type: 3}
+  deathEffect: {fileID: 5934937320967018915, guid: 4ee98f57bdae81a41ba1fb53cb846265,
+    type: 3}
   maxHealth: 10
 --- !u!114 &1528572876615808328
 MonoBehaviour:

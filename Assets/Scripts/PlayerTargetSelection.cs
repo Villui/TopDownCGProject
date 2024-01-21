@@ -10,7 +10,9 @@ public class PlayerTargetSelection : MonoBehaviour {
     [SerializeField] private CinemachineVirtualCamera virtualCam;
     [SerializeField] private float scanRadius = 10f;
 
+    private Vector3 originalCamRotation;
     private GameObject currentTarget;
+    private bool targetFocused;
     LayerMask enemyLayer;
 
 
@@ -26,12 +28,20 @@ public class PlayerTargetSelection : MonoBehaviour {
     private void Start() {
         InputManager.Instance.OnTargetSelectPerformed += ScanTargets;
         enemyLayer = 1 << LayerMask.NameToLayer("Enemy");
+        originalCamRotation = virtualCam.transform.eulerAngles;
     }
 
     private void Update() {
-        if (currentTarget == null && virtualCam.LookAt != null) {
-            virtualCam.LookAt = null;
-        } 
+        if (currentTarget == null && targetFocused) {
+            ResetCamera();
+        }
+
+        if (currentTarget != null) {
+            if (Vector3.Distance(transform.position, currentTarget.transform.position) > scanRadius) {
+                currentTarget = null;
+                ResetCamera();
+            }
+        }
     }
 
     private void ScanTargets() {
@@ -40,17 +50,32 @@ public class PlayerTargetSelection : MonoBehaviour {
 
         if (currentTarget != null && hits.Length == 0) {
             currentTarget = null;
-            virtualCam.LookAt = null;
+            ResetCamera();
             return;
-        } 
+        }
+
+        if (currentTarget != null && hits.Length == 1) {
+            if (hits[0].collider.gameObject == currentTarget) {
+                currentTarget = null;
+                ResetCamera();
+                return;
+            }
+        }
 
         foreach (RaycastHit hit in hits) {
             if (hit.collider.gameObject == currentTarget) continue;
 
             currentTarget = hit.collider.gameObject;
             virtualCam.LookAt = currentTarget.transform;
+            targetFocused = true;
             break;
         }
+    }
+
+    private void ResetCamera() {
+        virtualCam.LookAt = null;
+        virtualCam.transform.eulerAngles = originalCamRotation;
+        targetFocused = false;
     }
 
     public GameObject GetCurrentTarget() {

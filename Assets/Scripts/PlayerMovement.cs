@@ -73,10 +73,10 @@ public class PlayerMovement : MonoBehaviour {
         }
         else if (Vector3.Dot(transform.forward, movementVectorNormalized) >= -0.3f && 
             Vector3.Dot(transform.forward, movementVectorNormalized) <= 0) {
-            currentMovementType = MovementType.LeftStrafe;
+            currentMovementType = MovementType.RightStrafe;
         }
         else {
-            currentMovementType = MovementType.RightStrafe;
+            currentMovementType = MovementType.LeftStrafe;
         }
 
         return previousMovementType == currentMovementType;

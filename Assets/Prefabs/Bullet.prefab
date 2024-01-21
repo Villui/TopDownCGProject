@@ -5022,6 +5022,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6d76933b8afce4f9afd73c47301d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect: {fileID: 4527337064874316302, guid: 026e334e09432de438a2e65c095d09ee,
+    type: 3}
   projectileDamage: 2
   projectileSpeed: 10
   projectileLifetime: 5

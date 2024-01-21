@@ -32,9 +32,12 @@ public class Projectile : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.TryGetComponent<EnemyHealth>(out EnemyHealth enemyHealth)) {
             enemyHealth.TakeDamage(projectileDamage);
-            //play effect
+            Instantiate(hitEffect, other.gameObject.transform.position, Quaternion.identity);
 
             Destroy(gameObject);
+        }
+        if (other.gameObject.TryGetComponent<Destructible>(out Destructible destructible)) {
+            destructible.Destroy();
         }
     }
 }
