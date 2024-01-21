@@ -9,6 +9,7 @@ public static class Loader {
         MainMenuScene,
         GameScene,
         LoadingScene,
+        EndScene
     }
 
     private static Scene targetScene;

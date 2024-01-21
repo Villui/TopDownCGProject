@@ -8,6 +8,7 @@ public class Chest : MonoBehaviour {
 
     [SerializeField] private GameObject tooltipCanvas;
 
+    private float endingTimer = 10f;
     private bool playerInCollider;
     private Animator animator;
 
@@ -24,6 +25,7 @@ public class Chest : MonoBehaviour {
 
         animator.SetTrigger(CHEST_TRIGGER);
         tooltipCanvas.SetActive(false);
+        GameUIManager.Instance.EndGame();
     }
 
 
